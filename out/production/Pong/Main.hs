@@ -6,6 +6,7 @@ import           Graphics.Gloss
 import           Graphics.Gloss.Data.ViewPort       (ViewPort)
 import           Graphics.Gloss.Interface.Pure.Game
 
+-- | GENERAL SETTING
 width, height, offset :: Int
 width = 400
 
@@ -28,13 +29,15 @@ paddleDistance = 180
 
 ballRadius = 15
 
+fps :: Int
+fps = 60
+
 -- | A data structure to hold the state of the Pong game.
 data PongGame =
   Game
     { ballLoc :: (Float, Float) -- ^ Pong ball (x, y) location.
     , ballVel :: (Float, Float) -- ^ Pong ball (x, y) velocity.
     , player1 :: Float -- ^ Left player paddle height.
-                                               -- Zero is the middle of the screen.
     , player2 :: Float -- ^ Right player paddle height.
     }
   deriving (Show)
@@ -67,6 +70,13 @@ render game =
 -- | The starting state for the game of Pong.
 initialState :: PongGame
 initialState = Game {ballLoc = (-10, 30), ballVel = (-100, -30), player1 = 40, player2 = -80}
+
+-- | Update the game by moving the ball and bouncing off walls.
+update :: Float -> PongGame -> PongGame
+update seconds = wallBounce . paddleBounce . moveBall seconds . borderBounce
+
+main :: IO ()
+main = play window background fps initialState render handleKeys update
 
 -- | Respond to key events.
 handleKeys :: Event -> PongGame -> PongGame
@@ -204,14 +214,3 @@ borderCollision (x, _) radius = leftCollision || rightCollision
   where
     leftCollision = x - radius <= -fromIntegral width / 2
     rightCollision = x + radius >= fromIntegral width / 2
-
--- | Number of frames to show per second.
-fps :: Int
-fps = 60
-
--- | Update the game by moving the ball and bouncing off walls.
-update :: Float -> PongGame -> PongGame
-update seconds = wallBounce . paddleBounce . moveBall seconds . borderBounce
-
-main :: IO ()
-main = play window background fps initialState render handleKeys update

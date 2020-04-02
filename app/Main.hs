@@ -6,25 +6,44 @@ import           Graphics.Gloss
 import           Graphics.Gloss.Data.ViewPort       (ViewPort)
 import           Graphics.Gloss.Interface.Pure.Game
 
+-- | The starting state for the game of Pong.
+initialState :: PongGame
+initialState = Game {ballLoc = (-10, 30), ballVel = (-100, -30), player1 = 40, player2 = -80}
+
+-- | Update the game by moving the ball and bouncing off walls.
+update :: Float -> PongGame -> PongGame
+update seconds = wallBounce . paddleBounce . moveBall seconds . borderBounce
+
+main :: IO ()
+main = play window background fps initialState render handleKeys update
+
 -- | GENERAL SETTING
 width, height, offset :: Int
 width = 400
+
 height = 400
+
 offset = 200
+
 window :: Display
 window = InWindow "BlogPong" (width, height) (offset, offset)
+
 background :: Color
 background = yellow
+
 paddleWidth, paddleHeight, paddleDistance, ballRadius :: Float
 paddleWidth = 10
+
 paddleHeight = 100
+
 paddleDistance = 180
+
 ballRadius = 15
 
 fps :: Int
 fps = 60
 
--- | A data structure to hold the state of the Pong game.
+-- | GAMESTATE
 data PongGame =
   Game
     { ballLoc :: (Float, Float) -- ^ Pong ball (x, y) location.
@@ -58,19 +77,6 @@ render game =
         , translate (x) (y) $ color col $ rectangleSolid paddleWidth paddleHeight
         ]
     paddleColor = light (light blue)
--- | The starting state for the game of Pong.
-initialState :: PongGame
-initialState = Game {ballLoc = (-10, 30), ballVel = (-100, -30), player1 = 40, player2 = -80}
-
-
-
--- | Update the game by moving the ball and bouncing off walls.
-update :: Float -> PongGame -> PongGame
-update seconds = wallBounce . paddleBounce . moveBall seconds . borderBounce
-
-main :: IO ()
-main = play window background fps initialState render handleKeys update
-
 
 -- | Respond to key events.
 handleKeys :: Event -> PongGame -> PongGame
@@ -208,5 +214,3 @@ borderCollision (x, _) radius = leftCollision || rightCollision
   where
     leftCollision = x - radius <= -fromIntegral width / 2
     rightCollision = x + radius >= fromIntegral width / 2
-
-
