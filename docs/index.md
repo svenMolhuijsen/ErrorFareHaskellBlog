@@ -133,7 +133,7 @@ om alle ins en outs van de taal te leren. Daarin vielen mij een aantal dingen op
 
 
 
-##Day 3:
+## Day 3:
 geschreven op 14-3-2020
 
 Op deze dag ben ik aan de slag gegaan met het doorlopen van de aanwijzingen uit deze(http://andrew.gibiansky.com/blog/haskell/haskell-syntax/) inleiding op haskell.
@@ -154,7 +154,7 @@ Ik ben namelijk tot de conclusie gekomen dat iets van scratch maken waarbij er g
 Ik denk dat ik op dit moment voldoende handvaten heb om via een tutorial een eigen pong game te maken. 
 
 
-##Day 4: Setting up the UI
+## Day 4: Setting up the UI
 geschreven op 15-3-2020
 
 Om te beginnen heb ik het gloss package via stack geïnstalleerd. Ik heb er bewust voor gekozen om het hele programma in één module te schrijven. Namelijk de `main`
@@ -326,7 +326,7 @@ handleKeys (EventKey (SpecialKey KeyUp) _ _ _) game = game {player1 = y}
         else y1
 ```
 
-###Alles aan elkaar knopen
+### Alles aan elkaar knopen
 21-3-2020
 
 Om alles op een goede manier te laten werken moeten alle functies aan elkaar geknoopt worden in een globale functie, 
@@ -366,7 +366,7 @@ Op deze manier kan heel gemakkelijk een pipe and filter principe worden toegepas
 Ook is de syntax erg clean. In een taal als Java had de code er als volgt uitgezien:
 `return wallBounce(paddleBounce(moveBall(seconds, borderBounce())))`
 
-##Eindresultaat en oordeel
+## Eindresultaat en oordeel
 1-4-2020
 
 Tijdens het programmeren van deze applicatie ben ik erachter gekomen dat Haskell een taal is die fundamenteel anders werkt dan talen waar ik in het verleden mee gewerkt heb.
@@ -391,7 +391,7 @@ Ik zie mezelf hier niet graag in programmeren, toch zijn er een aantal concepten
 
 ![Pong](game.png)
 
-##Afsluiting
+## Afsluiting
 
 Ik hoop dat ik ik met dit blog inzicht heb gegeven in mijn leerproces en hoop dat het eindproduct een goed beeld geeft van de taal.
 Bij vragen wil ik graag een persoonlijke toelichting geven wanneer nodig.
