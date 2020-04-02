@@ -12,12 +12,12 @@ Als eindresultaat wil ik een pong game maken waar ik met twee spelers kan spelen
 daarnaast wil ik andere functionaliteiten inbouwen als ik eraan toe kom, zoals het tonen van de score, een AI of meerdere niveaus.
 Later in deze blog kom je erachter dat dit moeilijker dan gedacht was en ik mijn verwachtingen moest verlagen
 
-### So... Why Haskell?
-After programming this simple pong game i'd like to have a basic understanding of the functional programming paradigm.
-To archieve this I looked for a language which had almost no imperative paradigm support to prevent myself from 'accidently' programming an imperative program
-Secondly I'd like to choose a language that has a good community, so i could look somewhere for help.
-Michell recommended to try Haskell, and after doing a little research it suited al my needs. It is imperative and has a big community. 
-The Sytax looks hard, but is not impossible when i wrap my head around it.
+### Waarom Haskell?
+Na het programmeren van dit eenvoudige pongspel wil ik graag basiskennis hebben van het functionele paradigma.
+Om dit te bereiken zocht ik een taal die bijna geen imperatieve paradigma kenmerken had om te voorkomen dat ik 'per ongeluk' een imperatief programma programmeerde.
+Ten tweede zou ik graag een taal willen kiezen die een goede gemeenschap heeft, zodat ik ergens hulp kan zoeken.
+Michell raadde aan om Haskell te proberen, en na wat onderzoek te hebben gedaan, paste het bij al mijn behoeften. De taal is imperatief, relatief veel gebruikt en heeft een grote dev-community.
+De Sytax ziet er goed uit, maar is niet onmogelijk als ik er mijn hoofd omheen wikkel.
 
 
 ## Day 0: Opzetten project
