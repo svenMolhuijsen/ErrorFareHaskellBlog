@@ -1,23 +1,21 @@
 
 # Haskell Error fare web scraper development blog
-Deze blog is gemaakt om inzicht te geven in mijn poging om een ​​pongspel te maken.
-Mijn eerste idee was om een ​​webschraper te maken, maar door een gebrek aan gratis API's en de aanhoudende Covid-19-uitbraak (die ik destijds had) werd dit doel binnen de gestelde deadline onbereikbaar.
+Deze blog is gemaakt om inzicht te geven in mijn poging tot het maken van een Pong spelletje.
+Mijn eerste idee was om een webscraper te maken, maar door een gebrek aan gratis API's en ziekte werd dit doel binnen de gestelde deadline onbereikbaar.
 
 ## Day 1: Kiezen welke taal
 written on 05-03-2020
 
-### Goals
-Eerst wil ik enkele basisfunctionaliteiten in de taal leren. Dus syntax en andere dingen die de taal uniek maken,
-Als eindresultaat wil ik een pong game maken waar ik met twee spelers kan spelen. De eisen zijn dat het speelbaar is tussen twee personen
-daarnaast wil ik andere functionaliteiten inbouwen als ik eraan toe kom, zoals het tonen van de score, een AI of meerdere niveaus.
-Later in deze blog kom je erachter dat dit moeilijker dan gedacht was en ik mijn verwachtingen moest verlagen
+### Doel
+Eerst wil ik enkele basisfunctionaliteiten in de taal leren waaronder syntax en andere dingen die de taal uniek maken.
+Als eindresultaat wil ik een pong game maken waar ik met twee spelers kan spelen. De eisen zijn dat het speelbaar is tussen twee personen. Ik wil ook andere functiestoevoegen als ik eraan toe kom, zoals het tonen van de score, een AI of meerdere levels.
 
 ### Waarom Haskell?
 Na het programmeren van dit eenvoudige pongspel wil ik graag basiskennis hebben van het functionele paradigma.
 Om dit te bereiken zocht ik een taal die bijna geen imperatieve paradigma kenmerken had om te voorkomen dat ik 'per ongeluk' een imperatief programma programmeerde.
-Ten tweede zou ik graag een taal willen kiezen die een goede gemeenschap heeft, zodat ik ergens hulp kan zoeken.
+Ten tweede wil ik graag een taal kiezen die een goede gemeenschap heeft, zodat ik ergens hulp kan zoeken wanneer ik het nodig heb.
 Michell raadde aan om Haskell te proberen, en na wat onderzoek te hebben gedaan, paste het bij al mijn behoeften. De taal is imperatief, relatief veel gebruikt en heeft een grote dev-community.
-De Sytax ziet er goed uit, maar is niet onmogelijk als ik er mijn hoofd omheen wikkel.
+De Sytax ziet er lastig uit, maar, ik ga een goede poging wagen
 
 
 ## Day 0: Opzetten project
@@ -25,7 +23,7 @@ Written on 06-03-2020
 
 ### Build tool, package manager and IDE
 
-Ik zal Stack gebruiken als de build-tool, dit creëert een lokale omgeving, te vergelijken met PIP(Python) een standaard projectstructuur.
+Ik zal Stack gebruiken als de build-tool, dit creëert een lokale omgeving, te vergelijken met PIP(Python) en een standaard projectstructuur.
 Als IDE gebruikte ik Intellij met de Intellij-haskell plug-in. Echter,
 het doel van deze blog is om te wijzen op verschillen in de programmeertaal zelf. NIET de packagemanager. Daarom zal ik hier niet verder op in gaan.
 Ik gebruik deze (http://andrew.gibiansky.com/blog/haskell/haskell-gloss/) tutorial om me te begeleiden bij het maken van pong.
@@ -34,10 +32,10 @@ Ik gebruik deze (http://andrew.gibiansky.com/blog/haskell/haskell-gloss/) tutori
 geschreven op 10-03-2020
 
 Tijdens de eerste fase ben ik aan de slag gegaan met het kijken van een video, https://www.youtube.com/watch?v=02_H3LjqMr8&t=4060s 
-om alle ins en outs van de taal te leren. Daarin vielen mij een aantal dingen op waarop ik hierna dieper zal ingaan.
+om alle ins en outs van de taal te leren. Daarin vielen mij een aantal dingen op waar ik hierna dieper op zal ingaan.
 
 #### Eigenschappen
-* Lazy, Items worden niet geladen zolang ze niet nodig zijn, in `zeroToTen = [0..10]` wordt de 9 pas berekend wanneer het nodig is
+* De taal is Lazy, Items worden niet geladen zolang ze niet nodig zijn, in `zeroToTen = [0..10]` wordt de 9 pas berekend wanneer het nodig is
 * Loops niet mogelijk, tenzij recursive.
 * volgorde maakt niet uit.
 * sommige imperatieve operaties mogelijk door monads.
