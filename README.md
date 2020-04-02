@@ -386,10 +386,10 @@ Ik had graag extra functies toegevoegd zoals scores en levels, maar helaas liet 
 
 Ik zie mezelf hier niet graag in programmeren, toch zijn er een aantal concepten die ik wel mooi vind. Ik vraag me dan ook af of een taal als Java hier ondersteuning voor bied, neem het combineren van functies met de `.` operatoren de `where` en de bewerkingsmogelijkheden voor `list`.
 
-[Download executable](Pong.exe)
+[Download executable](Docs/Pong.exe)
 
 
-![Pong](game.png)
+![Pong](Docs/game.png)
 
 ## Afsluiting
 
