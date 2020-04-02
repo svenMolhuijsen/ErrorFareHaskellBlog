@@ -1,5 +1,5 @@
 
-##Haskell Error fare web scraper development blog
+# Haskell Error fare web scraper development blog
 Deze blog is gemaakt om inzicht te geven in mijn poging om een ​​pongspel te maken.
 Mijn eerste idee was om een ​​webschraper te maken, maar door een gebrek aan gratis API's en de aanhoudende Covid-19-uitbraak (die ik destijds had) werd dit doel binnen de gestelde deadline onbereikbaar.
 
